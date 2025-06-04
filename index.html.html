@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teste de Estilo - Jardim Onoda</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #fffaf7;
+      color: #333;
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    h1, h2 {
+      color: #b66a7c;
+    }
+    .question {
+      margin-bottom: 2rem;
+    }
+    .question label {
+      display: block;
+      margin-top: 0.5rem;
+    }
+    button {
+      background-color: #b66a7c;
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .result {
+      background: #fce8ed;
+      border-left: 5px solid #b66a7c;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>🌸 Teste de Estilo Jardim Onoda</h1>
+  <p>Responda às perguntas e descubra qual estilo pessoal mais representa você, inspirado nos 7 estilos de Alyce Parsons.</p>
+
+  <form id="quizForm">
+    <div class="question">
+      <h2>1. O que é mais importante para você ao se vestir?</h2>
+      <label><input type="radio" name="q1" value="A" required /> Estar elegante e refinada</label>
+      <label><input type="radio" name="q1" value="B" /> Estar confortável e prática</label>
+      <label><input type="radio" name="q1" value="C" /> Estar delicada e feminina</label>
+      <label><input type="radio" name="q1" value="D" /> Estar diferente e criativa</label>
+      <label><input type="radio" name="q1" value="E" /> Estar poderosa e marcante</label>
+      <label><input type="radio" name="q1" value="F" /> Estar bem-arrumada e discreta</label>
+      <label><input type="radio" name="q1" value="G" /> Estar sensual e confiante</label>
+    </div>
+
+    <div class="question">
+      <h2>2. Qual dessas roupas você usaria com mais prazer?</h2>
+      <label><input type="radio" name="q2" value="A" required /> Vestido midi de corte reto e salto fino</label>
+      <label><input type="radio" name="q2" value="B" /> Calça jeans, camiseta e tênis</label>
+      <label><input type="radio" name="q2" value="C" /> Vestido floral com renda ou babado</label>
+      <label><input type="radio" name="q2" value="D" /> Um mix ousado de estampas ou vintage</label>
+      <label><input type="radio" name="q2" value="E" /> Look preto com cortes marcantes e atitude</label>
+      <label><input type="radio" name="q2" value="F" /> Blazer com calça de alfaiataria neutra</label>
+      <label><input type="radio" name="q2" value="G" /> Um vestido justo, com decote ou fenda</label>
+    </div>
+
+    <div class="question">
+      <h2>3. Que frase combina mais com a sua personalidade?</h2>
+      <label><input type="radio" name="q3" value="A" required /> “Menos é mais – qualidade e bom gosto em primeiro lugar.”</label>
+      <label><input type="radio" name="q3" value="B" /> “Preciso me sentir livre para me mover!”</label>
+      <label><input type="radio" name="q3" value="C" /> “Gosto de um toque romântico em tudo que faço.”</label>
+      <label><input type="radio" name="q3" value="D" /> “Amo o inesperado. Não gosto de seguir regras.”</label>
+      <label><input type="radio" name="q3" value="E" /> “Adoro causar impacto e chamar atenção.”</label>
+      <label><input type="radio" name="q3" value="F" /> “Prefiro peças clássicas que sempre funcionam.”</label>
+      <label><input type="radio" name="q3" value="G" /> “Me sinto viva quando estou me sentindo desejada.”</label>
+    </div>
+
+    <div class="question">
+      <h2>4. Seu guarda-roupa tem mais:</h2>
+      <label><input type="radio" name="q4" value="A" required /> Peças neutras e elegantes, como camisas de seda e vestidos estruturados</label>
+      <label><input type="radio" name="q4" value="B" /> Jeans, algodão, malhas e peças básicas</label>
+      <label><input type="radio" name="q4" value="C" /> Saias rodadas, estampas florais, laços</label>
+      <label><input type="radio" name="q4" value="D" /> Estampas inusitadas, acessórios diferentes, peças únicas</label>
+      <label><input type="radio" name="q4" value="E" /> Cores escuras, looks monocromáticos, peças dramáticas</label>
+      <label><input type="radio" name="q4" value="F" /> Ternos, vestidos discretos, peças sem estampa</label>
+      <label><input type="radio" name="q4" value="G" /> Brilhos, couro, decotes, fendas e saltos</label>
+    </div>
+
+    <div class="question">
+      <h2>5. Como você gostaria de ser percebida?</h2>
+      <label><input type="radio" name="q5" value="A" required /> Elegante e sofisticada</label>
+      <label><input type="radio" name="q5" value="B" /> Simples, acessível e espontânea</label>
+      <label><input type="radio" name="q5" value="C" /> Doce e acolhedora</label>
+      <label><input type="radio" name="q5" value="D" /> Criativa, original e autêntica</label>
+      <label><input type="radio" name="q5" value="E" /> Forte, misteriosa e magnética</label>
+      <label><input type="radio" name="q5" value="F" /> Séria, confiável e discreta</label>
+      <label><input type="radio" name="q5" value="G" /> Sedutora, poderosa e segura de si</label>
+    </div>
+
+    <button type="submit">Ver meu resultado</button>
+  </form>
+
+  <div id="result" class="result" style="display: none;"></div>
+
+  <script>
+    document.getElementById("quizForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const answers = ["q1", "q2", "q3", "q4", "q5"];
+      const count = {};
+      answers.forEach(q => {
+        const answer = document.querySelector(`input[name="${q}"]:checked`).value;
+        count[answer] = (count[answer] || 0) + 1;
+      });
+
+      const highest = Object.entries(count).sort((a, b) => b[1] - a[1])[0][0];
+      const resultMap = {
+        A: "✨ Elegante: você valoriza sofisticação, discrição e qualidade.",
+        B: "🌿 Esportiva: você preza por conforto, praticidade e leveza.",
+        C: "🌸 Romântica: você se expressa com doçura e feminilidade.",
+        D: "🎨 Criativa: você ama ousar, brincar com formas e cores.",
+        E: "🔥 Dramática: sua imagem é poderosa e cheia de presença.",
+        F: "🎓 Tradicional: você é discreta, clássica e confiável.",
+        G: "💃 Sexy: segura de si, usa a moda para expressar sua sensualidade."
+      };
+
+      document.getElementById("result").innerHTML = `<strong>Seu estilo predominante:</strong><br>${resultMap[highest]}`;
+      document.getElementById("result").style.display = "block";
+    });
+  </script>
+</body>
+</html>
